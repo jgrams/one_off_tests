@@ -12,8 +12,8 @@ class TSP
     y_change = (starting_position[1] - ending_position[1])
     Math.sqrt(x_change*x_change + y_change*y_change)
   end
-  #grid and cities are both arrays of arrays
-  #goal is to minimize moves_counter which count distance
+  #goal is to minimize total distance, this calcuates distance for every 
+  #item in an array
   def move_count(array_of_arrays)
     position = [0, 0]
     total_distance = 0
