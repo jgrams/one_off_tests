@@ -37,7 +37,4 @@ def slower_missing_nums(array)
   missing_nums
 end
 
-array = Array.new(9998) {|num| num += 1}
-puts missing_nums(array)
-puts better_missing_nums(array)
   
