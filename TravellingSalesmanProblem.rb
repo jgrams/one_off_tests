@@ -1,4 +1,6 @@
-class TravSP
+#extremely brute force solving of this problem, look into node spanning algorithms
+#like minimum spanning tree, DFS, Dijkstra for more scaleable solutions
+class TSP
   def initialize(cities)  
     # Instance variables  
     @cities = cities  
@@ -47,29 +49,21 @@ class TravSP
     @array_of_city_arrangements
   end
 
-  #retruns the minimum possible distance for travelling
+  #returns the minimum possible distance for travelling
   def dist(cities)
     @possible_distances = []
     shuffle_cities(cities).each do |array_of_array| 
-      possible_distances.push(move_count(array_of_array))
+      @possible_distances.push(move_count(array_of_array))
     end
-    possible_distances.min
-
+    @possible_distances.min
   end
 
   #returns the order the cities should be visited
   #looks at the index position of the minimum distance, and returns the
-  #element at the same index position in the array of possible city rotues
-  def city_order
+  #element at the same index position in the array of possible city routes
+  #must be run after dist function or will raise an error
+  def route
     index = @possible_distances.index(@possible_distances.min)
     @array_of_city_arrangements[index]
   end
 end
-
-
-
-
-
-
-
-
