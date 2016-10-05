@@ -44,8 +44,8 @@ class GameOfLife
       for i in @world
         if life_continues(i)
           i[2] = true
-        else
-          i[2] = false
+          else
+            i[2] = false
         end
       puts @world  
       end
