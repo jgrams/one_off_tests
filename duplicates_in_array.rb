@@ -13,3 +13,12 @@ def return_duplicates_in_array(array)
       else array -= array[index]
   end
 end 
+
+#more readable solution that takes up some memory
+def return_duplicates_in_array(array)
+  returned_array = []
+  array.each do |item|
+    if array.count(item) > 1 && !returned_array.include?(item)
+      returned_array.push(item)
+  end
+end 
